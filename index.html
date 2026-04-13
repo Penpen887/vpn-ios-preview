@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Nova VPN Preview</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <div class="ambient ambient-left"></div>
+      <div class="ambient ambient-right"></div>
+
+      <main class="phone-frame">
+        <header class="status-bar">
+          <span>9:41</span>
+          <div class="status-icons">
+            <span>5G</span>
+            <span class="battery"></span>
+          </div>
+        </header>
+
+        <section class="hero">
+          <div>
+            <p class="eyebrow">Nova VPN</p>
+            <h1 id="heroTitle">Private by design.</h1>
+            <p class="hero-copy" id="heroCopy">Fast global access with a quieter interface.</p>
+          </div>
+          <div class="hero-actions">
+            <div class="lang-toggle" id="langToggle">
+              <button class="lang-button is-active" data-lang="en">EN</button>
+              <button class="lang-button" data-lang="zh">中文</button>
+            </div>
+            <button class="capsule-button ghost-button" id="quickBoost">Boost</button>
+          </div>
+        </section>
+
+        <section class="tab-content is-active" data-tab-panel="world">
+          <div class="world-card glass-card">
+            <div class="world-meta">
+              <div>
+                <p class="small-label" id="worldLabel">World</p>
+                <h2 id="worldTitle">Live route</h2>
+              </div>
+              <span class="latency-pill" id="latencyPill">Latency 22ms</span>
+            </div>
+
+            <div class="hero-strip">
+              <div class="strip-item">
+                <span class="small-label" id="statusLabel">Status</span>
+                <strong id="statusValue">Protected</strong>
+              </div>
+              <div class="strip-item">
+                <span class="small-label" id="modeTextLabel">Mode</span>
+                <strong id="modeLabel">Streaming</strong>
+              </div>
+              <div class="strip-item">
+                <span class="small-label" id="nodeTextLabel">Node</span>
+                <strong id="targetNode">California</strong>
+              </div>
+            </div>
+
+            <div class="globe-stage" id="globeStage">
+              <div class="orbital orbital-one"></div>
+              <div class="orbital orbital-two"></div>
+              <div class="globe" id="globe">
+                <div class="globe-surface"></div>
+                <div class="globe-grid"></div>
+                <div class="glow-ring"></div>
+                <button class="node is-active" data-node="California" style="--x: 23%; --y: 42%" aria-label="California"></button>
+                <button class="node" data-node="London" style="--x: 48%; --y: 26%" aria-label="London"></button>
+                <button class="node" data-node="Frankfurt" style="--x: 54%; --y: 33%" aria-label="Frankfurt"></button>
+                <button class="node" data-node="Singapore" style="--x: 74%; --y: 63%" aria-label="Singapore"></button>
+                <button class="node" data-node="Tokyo" style="--x: 82%; --y: 39%" aria-label="Tokyo"></button>
+                <button class="node" data-node="Sydney" style="--x: 86%; --y: 78%" aria-label="Sydney"></button>
+              </div>
+              <div class="connection-toast glass-card">
+                <span class="signal-dot"></span>
+                <div>
+                  <p class="small-label" id="routeLabel">Route</p>
+                  <strong id="activeRoute">California • Streaming</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="scene-grid" id="sceneGrid">
+              <button class="scene-chip is-selected" data-scene="Streaming">
+                <span class="scene-name">Streaming</span>
+                <small class="scene-meta">4K</small>
+              </button>
+              <button class="scene-chip" data-scene="Gaming">
+                <span class="scene-name">Gaming</span>
+                <small class="scene-meta">Low ping</small>
+              </button>
+              <button class="scene-chip" data-scene="Browser">
+                <span class="scene-name">Browser</span>
+                <small class="scene-meta">Private</small>
+              </button>
+              <button class="scene-chip" data-scene="Work">
+                <span class="scene-name">Work</span>
+                <small class="scene-meta">Stable</small>
+              </button>
+            </div>
+
+            <div class="world-actions">
+              <div class="connection-stats">
+                <div>
+                  <p class="small-label" id="speedLabel">Speed</p>
+                  <strong id="targetSpeed">1.2 Gbps</strong>
+                </div>
+                <div>
+                  <p class="small-label" id="shieldLabel">Shield</p>
+                  <strong id="shieldValue">DNS On</strong>
+                </div>
+              </div>
+              <button class="primary-button" id="connectButton">Connect</button>
+            </div>
+          </div>
+
+          <section class="lower-panels">
+            <article class="glass-card stat-card">
+              <p class="small-label" id="smartRoutingLabel">Smart routing</p>
+              <h3 id="smartRoutingTitle">Adaptive edge</h3>
+              <p id="smartRoutingCopy">Routes shift in real time.</p>
+            </article>
+            <article class="glass-card stat-card">
+              <p class="small-label" id="protectionLabel">Protection</p>
+              <h3 id="protectionTitle">Leak guard</h3>
+              <p id="protectionCopy">DNS and exposure checks stay active.</p>
+            </article>
+          </section>
+        </section>
+
+        <section class="tab-content" data-tab-panel="custom">
+          <div class="glass-card form-card">
+            <div class="section-head">
+              <div>
+                <p class="small-label" id="customLabel">Custom</p>
+                <h2 id="customTitle">Build a route</h2>
+              </div>
+              <span class="tag" id="customTag">Advanced</span>
+            </div>
+
+            <label class="field">
+              <span id="countryLabel">Country / Region</span>
+              <input type="text" id="countryInput" value="Japan · Tokyo" placeholder="Singapore / Germany / Japan" />
+            </label>
+
+            <label class="field">
+              <span id="goalLabel">Use Case</span>
+              <input type="text" id="goalInput" value="Competitive gaming" placeholder="Streaming / Gaming / Work" />
+            </label>
+
+            <label class="field">
+              <span id="speedInputLabel">Target Speed</span>
+              <input type="text" id="speedInput" value="900 Mbps+" placeholder="500 Mbps+" />
+            </label>
+
+            <div class="slider-card">
+              <div class="slider-copy">
+                <p class="small-label" id="priorityLabel">Priority</p>
+                <strong id="priorityValue">Latency first</strong>
+              </div>
+              <input type="range" min="0" max="2" step="1" value="0" id="prioritySlider" />
+              <div class="slider-labels">
+                <span id="sliderLabel0">Latency</span>
+                <span id="sliderLabel1">Balance</span>
+                <span id="sliderLabel2">Throughput</span>
+              </div>
+            </div>
+
+            <button class="primary-button" id="customSubmit">Apply</button>
+          </div>
+        </section>
+
+        <section class="tab-content" data-tab-panel="security">
+          <div class="security-layout">
+            <article class="glass-card security-score">
+              <p class="small-label" id="securityLabel">Network health</p>
+              <div class="score-ring">
+                <div>
+                  <strong>92</strong>
+                  <span>/ 100</span>
+                </div>
+              </div>
+              <h2 id="securityTitle">Secure</h2>
+              <p id="securityCopy">Low exposure. Medium Wi-Fi risk.</p>
+            </article>
+
+            <article class="glass-card metric-list">
+              <div class="metric-item">
+                <div>
+                  <p id="metricIpTitle">IP Exposure</p>
+                  <small id="metricIpCopy">Address hidden</small>
+                </div>
+                <span class="metric-badge ok" id="metricIpValue">Protected</span>
+              </div>
+              <div class="metric-item">
+                <div>
+                  <p id="metricDnsTitle">DNS Leak</p>
+                  <small id="metricDnsCopy">Resolver sealed</small>
+                </div>
+                <span class="metric-badge ok" id="metricDnsValue">No Leak</span>
+              </div>
+              <div class="metric-item">
+                <div>
+                  <p id="metricEncTitle">Encryption</p>
+                  <small id="metricEncCopy">Transport cipher</small>
+                </div>
+                <span class="metric-badge ok" id="metricEncValue">Strong</span>
+              </div>
+              <div class="metric-item">
+                <div>
+                  <p id="metricWifiTitle">Wi-Fi Trust</p>
+                  <small id="metricWifiCopy">Local network score</small>
+                </div>
+                <span class="metric-badge warn" id="metricWifiValue">Medium</span>
+              </div>
+              <div class="metric-item">
+                <div>
+                  <p id="metricTrackerTitle">Tracker Blocking</p>
+                  <small id="metricTrackerCopy">Blocking rate</small>
+                </div>
+                <span class="metric-badge ok">84%</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="tab-content" data-tab-panel="settings">
+          <div class="glass-card settings-card">
+            <div class="section-head">
+              <div>
+                <p class="small-label" id="settingsLabel">Preferences</p>
+                <h2 id="settingsTitle">Settings</h2>
+              </div>
+              <span class="tag">v2.8.1</span>
+            </div>
+
+            <div class="settings-list">
+              <button class="settings-item">
+                <span id="settingsPrivacyTitle">Privacy Policy</span>
+                <small id="settingsPrivacyCopy">Data use</small>
+              </button>
+              <button class="settings-item">
+                <span id="settingsTermsTitle">Terms of Service</span>
+                <small id="settingsTermsCopy">Legal</small>
+              </button>
+              <button class="settings-item">
+                <span id="settingsShareTitle">Share App</span>
+                <small id="settingsShareCopy">Invite</small>
+              </button>
+              <button class="settings-item">
+                <span id="settingsFeedbackTitle">Send Feedback</span>
+                <small id="settingsFeedbackCopy">Support</small>
+              </button>
+              <button class="settings-item">
+                <span id="settingsNotificationsTitle">Notifications</span>
+                <small id="settingsNotificationsCopy">Alerts</small>
+              </button>
+              <button class="settings-item">
+                <span id="settingsAboutTitle">About Nova VPN</span>
+                <small id="settingsAboutCopy">Version</small>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <nav class="tab-bar">
+          <button class="tab-button is-active" data-tab="world">
+            <span class="tab-icon">◎</span>
+            <span id="tabWorld">World</span>
+          </button>
+          <button class="tab-button" data-tab="custom">
+            <span class="tab-icon">✦</span>
+            <span id="tabCustom">Custom</span>
+          </button>
+          <button class="tab-button" data-tab="security">
+            <span class="tab-icon">▣</span>
+            <span id="tabSecurity">Security</span>
+          </button>
+          <button class="tab-button" data-tab="settings">
+            <span class="tab-icon">☰</span>
+            <span id="tabSettings">Settings</span>
+          </button>
+        </nav>
+
+        <div class="home-indicator"></div>
+      </main>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
